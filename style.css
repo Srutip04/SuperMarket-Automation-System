@@ -60,6 +60,9 @@ a{
     text-transform: uppercase;
     color: rgb(255, 255, 255);
 }
+a:hover{
+    color: cyan;
+}
 
    
 #supp{
@@ -104,11 +107,11 @@ a{
         align-self: center;
     }
 
-    #admin {
+    #customer {
         grid-area: dd;
     }
 
-    #customer {
+    #admin {
         grid-area: bb;
     }
 
