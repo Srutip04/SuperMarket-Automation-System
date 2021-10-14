@@ -8,6 +8,7 @@ $stmt = $pdo->query("SELECT customer.Name,customer.PhnNo,customer_id FROM `custo
 
 <head>
     <title>Data</title>
+    <link rel="stylesheet" href="css/table.css">
 </head>
 
 <body>
