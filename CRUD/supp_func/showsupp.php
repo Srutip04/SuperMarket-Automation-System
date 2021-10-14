@@ -8,6 +8,7 @@ $stmt = $pdo->query("SELECT supplier.name,supplier.phn,supplier_id FROM `supplie
 
 <head>
     <title>Data</title>
+     <link rel="stylesheet" href="css/table.css">
 </head>
 
 <body>
@@ -37,9 +38,9 @@ $stmt = $pdo->query("SELECT supplier.name,supplier.phn,supplier_id FROM `supplie
                 echo ("</td><td>");
                 echo ($rows['phn']);
                 echo ("</td><td>");
-                echo ('<a href="delsupp.php?customer_id=' . $cid . '">Delete</a>');
+                echo ('<a href="delsupp.php?supplier_id=' . $cid . '">Delete</a>');
                 echo ("</td><td>");
-                echo ('<a href="editsupp.php?customer_id=' . $cid . '">Edit</a>');
+                echo ('<a href="editsupp.php?supplier_id=' . $cid . '">Edit</a>');
                 echo ("</td></tr>");
             }
             ?>
