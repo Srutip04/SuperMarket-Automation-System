@@ -2,13 +2,14 @@
 require_once 'pdo.php';
 session_start();
 
-if (isset($_POST['order_date']) && isset($_POST['product_id']) && isset($_POST['customer_id']) && isset($_POST['comp_id'])) {
-    $stmt = $pdo->prepare("INSERT INTO `orders` (order_date,product_id,customer_id,comp_id) VALUES(:order_date,:product_id,:customer_id,:comp_id)");
+if (isset($_POST['order_date']) && isset($_POST['product_id']) && isset($_POST['customer_id'])) {
+    $stmt = $pdo->prepare("INSERT INTO `orders` (order_date,qty,price,product_id,customer_id) VALUES(:order_date,:qty,:price,:product_id,:customer_id)");
     $stmt->execute(array(
         ':order_date' => $_POST['order_date'], 
+        ':qty'=>$_POST['qty'],
+        ':price'=>$_POST['price'],
         ':product_id' => $_POST['product_id'],
-        ':customer_id' => $_POST['customer_id'],
-        ':comp_id' => $_POST['comp_id']
+        ':customer_id' => $_POST['customer_id']
     ));
     $_SESSION['success'] = 'Record Added';
     header("Location: showorder.php");
@@ -42,24 +43,23 @@ if (isset($_POST['order_date']) && isset($_POST['product_id']) && isset($_POST['
                     <input class="input1" type="text" name="order_date" placeholder="Order Date">
                     <span class="shadow-input1"></span>
                 </div>
+                <div class="wrap-input1 validate-input" data-validate="Required">
+                    <input class="input1" type="text" name="qty" placeholder="Quantity">
+                    <span class="shadow-input1"></span>
+                </div>
+                <div class="wrap-input1 validate-input" data-validate="Required">
+                    <input class="input1" type="text" name="price" placeholder="Price">
+                    <span class="shadow-input1"></span>
+                </div>
 
-                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="product_id" placeholder="Product ID">
                     <span class="shadow-input1"></span>
                 </div>
-                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input1" type="text" name="customer_id" placeholder="customer_id">
+                <div class="wrap-input1 validate-input" data-validate="Required">
+                    <input class="input1" type="text" name="customer_id" placeholder="Customer ID">
                     <span class="shadow-input1"></span>
                 </div>
-                 <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input1" type="text" name="comp_id" placeholder="Company ID">
-                    <span class="shadow-input1"></span>
-                </div>
-
-
-
-
-
                 <div class="container-contact1-form-btn">
                     <button class="contact1-form-btn">
                         <span>
