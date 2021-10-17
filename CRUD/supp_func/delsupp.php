@@ -13,7 +13,7 @@ $stmt = $pdo->prepare("SELECT supplier.name,supplier.phn,supplier_id FROM suppli
 $stmt->execute(array(':cip' => $_GET['supplier_id']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row === false) {
-    $_SESSION['error'] = 'Bad value for customer_id';
+    $_SESSION['error'] = 'Bad value for supplier_id';
     header('Location: showsupp.php');
     return;
 }
@@ -27,7 +27,7 @@ if ($row === false) {
 </head>
 
 <body>
-    <?php $row['Name'] ?>
+    <?php $row['name'] ?>
     <div class="contact1">
         <div class="container-contact1">
             <div class="contact1-pic js-tilt" data-tilt>

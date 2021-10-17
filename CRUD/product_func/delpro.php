@@ -13,7 +13,7 @@
             return;
         }
 
-        $stmt = $pdo->prepare("SELECT product_id,products.product_name,products.unit,products.price,products.mfg_date,products.comp_id FROM `products` JOIN `company` ON products.comp_id = company.comp_id WHERE product_id = :cip");
+        $stmt = $pdo->prepare("SELECT products.product_name,products.qty,products.price,products.mfg_date,product_id FROM products  WHERE product_id = :cip");
         $stmt->execute(array(':cip' => $_GET['product_id']));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if ( $row === false ) {
@@ -49,7 +49,7 @@
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="unit" value="<?= $row['unit'] ?>">
+					<input class="input1" type="text" name="qty" value="<?= $row['qty'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
@@ -60,10 +60,7 @@
 					<input class="input1" type="text" name="mfg_date" value="<?= $row['mfg_date'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
-                <div class="wrap-input1">
-					<input class="input1" type="text" name="comp_id" value="<?= $row['comp_id'] ?>">
-                    <span class="shadow-input1"></span>
-                </div>
+                
 
                 <div class="container-contact1-form-btn">
                 <button class="contact1-form-btn">

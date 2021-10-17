@@ -4,15 +4,15 @@
 
 
     
-        if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['price']) && isset($_POST['mfg_date']) && isset($_POST['comp_id'])) {
-            $stmt = $pdo->prepare("UPDATE `products` SET product_name =:product_name,unit = :unit,price = :price,mfg_date=:mfg_date,comp_id=:comp_id WHERE product_id = :cid");
-            $stmt->execute(array(':product_name' => $_POST['product_name'],':unit' => $_POST['unit'],':price' => $_POST['price'],':mfg_date' => $_POST['mfg_date'],':comp_id' => $_POST['comp_id'],':cid' =>$_POST['product_id']));
+        if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['qty']) && isset($_POST['price']) && isset($_POST['mfg_date'])) {
+            $stmt = $pdo->prepare("UPDATE `products` SET product_name =:product_name,qty = :qty,price = :price,mfg_date=:mfg_date WHERE product_id = :cid");
+            $stmt->execute(array(':product_name' => $_POST['product_name'],':qty' => $_POST['qty'],':price' => $_POST['price'],':mfg_date' => $_POST['mfg_date'],':cid' =>$_POST['product_id']));
             $_SESSION['success'] = 'Record Edited';
             header('Location: showpro.php');
             return;
         }
 
-        $stmt = $pdo->prepare("SELECT product_id,products.product_name,products.unit,products.price,products.mfg_date,company.comp_name,products.comp_id FROM `products` JOIN `company` ON products.comp_id = company.comp_id WHERE product_id = :cip");
+        $stmt = $pdo->prepare("SELECT products.product_name,products.qty,products.price,products.mfg_date,product_id FROM `products`  WHERE product_id = :cip");
         $stmt->execute(array(':cip' => $_GET['product_id']));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if ( $row === false ) {
@@ -47,7 +47,7 @@
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="unit" value="<?= $row['unit'] ?>">
+					<input class="input1" type="text" name="qty" value="<?= $row['qty'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
@@ -58,10 +58,7 @@
 					<input class="input1" type="text" name="mfg_date" value="<?= $row['mfg_date'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
-                <div class="wrap-input1">
-					<input class="input1" type="text" name="comp_id" value="<?= $row['comp_id'] ?>">
-                    <span class="shadow-input1"></span>
-                </div>
+               
 
                 <div class="container-contact1-form-btn">
                 <button class="contact1-form-btn">

@@ -1,9 +1,6 @@
 <?php
     require_once "pdo.php";
-    session_start();
-
-
-    
+    session_start();  
     if(isset($_POST['order_id']))
         {
             $stmt = $pdo->prepare("DELETE FROM `orders` WHERE order_id = :cid");
@@ -13,8 +10,8 @@
             return;
         }
 
-        $stmt = $pdo->prepare("SELECT order_id,orders.order_date,products.product_name,products.price,products.mfg_date,customer.Name,customer.PhnNo,company.comp_name,orders.product_id,orders.customer_id,orders.comp_id FROM `orders`
-        INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id INNER JOIN `company` ON orders.comp_id=company.comp_id  WHERE order_id = :cip");
+        $stmt = $pdo->prepare("SELECT order_id,orders.order_date,orders.qty,orders.price,products.product_name,products.mfg_date,customer.Name,customer.PhnNo,orders.product_id,orders.customer_id FROM `orders`
+        INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id  WHERE order_id = :cip");
         $stmt->execute(array(':cip' => $_GET['order_id']));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if ( $row === false ) {
@@ -50,6 +47,14 @@
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
+					<input class="input1" type="text" name="qty" value="<?= $row['qty'] ?>">
+                    <span class="shadow-input1"></span>
+                </div>
+                <div class="wrap-input1">
+					<input class="input1" type="text" name="price" value="<?= $row['price'] ?>">
+                    <span class="shadow-input1"></span>
+                </div>
+                <div class="wrap-input1">
 					<input class="input1" type="text" name="product_id" value="<?= $row['product_id'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
@@ -57,18 +62,15 @@
 					<input class="input1" type="text" name="customer_id" value="<?= $row['customer_id'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
-                <div class="wrap-input1">
-					<input class="input1" type="text" name="comp_id" value="<?= $row['comp_id'] ?>">
-                    <span class="shadow-input1"></span>
-                </div>
+                
 
                 <div class="container-contact1-form-btn">
-                <button class="contact1-form-btn">
-                <span >
-                <input style = "background-color : rgba(0,0,0,0)" type="submit" value="Delete" name="delete">
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </span>
-                </button>
+                   <button class="contact1-form-btn">
+                     <span >
+                       <input style = "background-color : rgba(0,0,0,0)" type="submit" value="Delete" name="delete">
+                       <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                   </button>
                 </div>
 			</form>
 		</div>

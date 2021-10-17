@@ -3,13 +3,12 @@ require_once 'pdo.php';
 session_start();
 
 if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['price']) && isset($_POST['mfg_date']) && isset($_POST['comp_id'])) {
-    $stmt = $pdo->prepare("INSERT INTO `products` (product_name,unit,price,mfg_date,comp_id) VALUES(:product_name,:unit,:price,:mfg_date,:comp_id)");
+    $stmt = $pdo->prepare("INSERT INTO `products` (product_name,qty,price,mfg_date) VALUES(:product_name,:qty,:price,:mfg_date)");
     $stmt->execute(array(
         ':product_name' => $_POST['product_name'], 
-        ':unit' => $_POST['unit'],
+        ':qty' => $_POST['qty'],
         ':price' => $_POST['price'],
-        ':mfg_date' => $_POST['mfg_date'],
-        ':comp_id' => $_POST['comp_id']
+        ':mfg_date' => $_POST['mfg_date']
     ));
     $_SESSION['success'] = 'Record Added';
     header("Location: showpro.php");
@@ -56,10 +55,7 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
                     <input class="input1" type="text" name="mfg_date" placeholder="Mfg Date">
                     <span class="shadow-input1"></span>
                 </div>
-                 <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input1" type="text" name="comp_id" placeholder="Company ID">
-                    <span class="shadow-input1"></span>
-                </div>
+                 
 
 
 
@@ -68,7 +64,7 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
                 <div class="container-contact1-form-btn">
                     <button class="contact1-form-btn">
                         <span>
-                            ADD COMPANY
+                            ADD PRODUCT
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </span>
                     </button>
