@@ -26,7 +26,7 @@ html,body{
     position: absolute;
     width: 896px;
     height: 708px;
-    left: 0px;
+    left: 27px;
     top: 180px;
     background: url(admin.jpg);
     background-repeat: no-repeat;
@@ -35,10 +35,10 @@ html,body{
     position: absolute;
     width: 346px;
     height: 61px;
-    left: 896px;
+    left: 925px;
     top: 233px;
 
-    background: #C4C4C4;
+    background: hsl(225, 100%, 94%);
     -webkit-border-radius: 47px;
     -moz-border-radius: 47px;
     border-radius: 47px;
@@ -47,10 +47,10 @@ html,body{
     position: absolute;
     width: 346px;
     height: 61px;
-    left: 896px;
+    left: 925px;
     top: 324px;
 
-    background: #C4C4C4;
+    background:hsl(225, 100%, 94%);
     -webkit-border-radius: 47px;
     -moz-border-radius: 47px;
     border-radius: 47px;
@@ -59,10 +59,10 @@ html,body{
     position: absolute;
     width: 346px;
     height: 61px;
-    left: 896px;
+    left: 925px;
     top: 403px;
 
-    background: #C4C4C4;
+    background: hsl(225, 100%, 94%);
     -webkit-border-radius: 47px;
     -moz-border-radius: 47px;
     border-radius: 47px;
@@ -71,9 +71,9 @@ html,body{
     position: absolute;
     width: 346px;
     height: 61px;
-    left: 896px;
+    left: 925px;
     top: 487px;
-    background: #C4C4C4;
+    background: hsl(225, 100%, 94%);
     -webkit-border-radius: 47px;
     -moz-border-radius: 47px;
     border-radius: 47px;
@@ -87,10 +87,13 @@ html,body{
 }
 span {
     font-size: 1.7rem;
-    color: wheat;
+    color: #000;
     text-decoration: none;
     text-transform: uppercase;
 
+}
+span:hover{
+    color: hsl(245, 75%, 52%);
 }
 a{
     text-decoration: none;
