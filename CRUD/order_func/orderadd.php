@@ -81,4 +81,5 @@ if (isset($_POST['order_date']) && isset($_POST['product_id']) && isset($_POST['
             </form>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>

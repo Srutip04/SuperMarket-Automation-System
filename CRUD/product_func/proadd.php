@@ -43,15 +43,15 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
                     <span class="shadow-input1"></span>
                 </div>
 
-                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="unit" placeholder="Unit">
                     <span class="shadow-input1"></span>
                 </div>
-                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="price" placeholder="Price">
                     <span class="shadow-input1"></span>
                 </div>
-                 <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                 <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="mfg_date" placeholder="Mfg Date">
                     <span class="shadow-input1"></span>
                 </div>
@@ -82,4 +82,5 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
             </form>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>

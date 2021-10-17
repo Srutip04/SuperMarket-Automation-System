@@ -60,5 +60,5 @@ if ($row === false) {
         </div>
     </div>
 </body>
-
+<script src="main.js"></script>
 </html>

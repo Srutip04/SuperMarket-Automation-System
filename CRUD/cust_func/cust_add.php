@@ -63,4 +63,5 @@ if (isset($_POST['Name']) && isset($_POST['PhnNo'])) {
             </form>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>

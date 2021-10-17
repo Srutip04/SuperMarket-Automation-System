@@ -38,7 +38,7 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
                     <span class="shadow-input1"></span>
                 </div>
 
-                <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="phn" placeholder="Phone no.">
                     <span class="shadow-input1"></span>
                 </div>
@@ -67,4 +67,6 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
             </form>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
+</html>
