@@ -27,7 +27,7 @@ html,body{
     width: 896px;
     height: 708px;
     left: 0px;
-    top: 263px;
+    top: 180px;
     background: url(admin.jpg);
     background-repeat: no-repeat;
 }
@@ -36,7 +36,7 @@ html,body{
     width: 346px;
     height: 61px;
     left: 896px;
-    top: 300px;
+    top: 233px;
 
     background: #C4C4C4;
     -webkit-border-radius: 47px;
@@ -48,7 +48,7 @@ html,body{
     width: 346px;
     height: 61px;
     left: 896px;
-    top: 390px;
+    top: 324px;
 
     background: #C4C4C4;
     -webkit-border-radius: 47px;
@@ -60,7 +60,7 @@ html,body{
     width: 346px;
     height: 61px;
     left: 896px;
-    top: 489px;
+    top: 403px;
 
     background: #C4C4C4;
     -webkit-border-radius: 47px;
@@ -72,7 +72,7 @@ html,body{
     width: 346px;
     height: 61px;
     left: 896px;
-    top: 579px;
+    top: 487px;
     background: #C4C4C4;
     -webkit-border-radius: 47px;
     -moz-border-radius: 47px;
