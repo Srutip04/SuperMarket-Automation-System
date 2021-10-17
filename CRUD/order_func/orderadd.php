@@ -31,7 +31,7 @@ if (isset($_POST['order_date']) && isset($_POST['product_id']) && isset($_POST['
     <div class="contact1">
         <div class="container-contact1">
             <div class="contact1-pic js-tilt" data-tilt>
-                <img src="images/distributor.png" alt="IMG">
+                <img src="images/order-icon-png-22.jpg" alt="IMG">
             </div>
 
             <form method="post" action="orderadd.php" class="contact1-form validate-form">

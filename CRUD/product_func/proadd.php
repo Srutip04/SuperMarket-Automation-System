@@ -30,7 +30,7 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
     <div class="contact1">
         <div class="container-contact1">
             <div class="contact1-pic js-tilt" data-tilt>
-                <img src="images/distributor.png" alt="IMG">
+                <img src="images/sell-products.png" alt="IMG">
             </div>
 
             <form method="post" action="proadd.php" class="contact1-form validate-form">

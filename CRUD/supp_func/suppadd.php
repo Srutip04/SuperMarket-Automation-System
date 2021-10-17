@@ -14,7 +14,7 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
 <html lang="en">
 
 <head>
-    <title>Customer</title>
+    <title>Supplier</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
@@ -25,12 +25,12 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
     <div class="contact1">
         <div class="container-contact1">
             <div class="contact1-pic js-tilt" data-tilt>
-                <img src="images/distributor.png" alt="IMG">
+                <img src="images/suppliers-png-11553367919th2abyyrif.png" alt="IMG">
             </div>
 
             <form method="post" action="suppadd.php" class="contact1-form validate-form">
                 <span class="contact1-form-title">
-                    CUSTOMER FUNCTIONS
+                    SUPPLIER FUNCTIONS
                 </span>
 
                 <div class="wrap-input1 validate-input" data-validate="Name is required">
@@ -49,7 +49,7 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
                 <div class="container-contact1-form-btn">
                     <button class="contact1-form-btn">
                         <span>
-                            ADD CUSTOMER
+                            ADD SUPPLIER
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </span>
                     </button>

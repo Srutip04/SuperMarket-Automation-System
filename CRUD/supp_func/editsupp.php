@@ -32,7 +32,7 @@
 ?>
 <html>
     <head>
-        <title></title>
+        <title>Supplier</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/util.css">
     </head>
@@ -40,7 +40,7 @@
         <div class="contact1">
 		<div class="container-contact1">
 			<div class="contact1-pic js-tilt" data-tilt>
-				<img src="images/distributor.png" alt="IMG">
+				<img src="images/suppliers-png-11553367919th2abyyrif.png" alt="IMG">
 			</div>
 
 			<form method = "post" class="contact1-form validate-form">

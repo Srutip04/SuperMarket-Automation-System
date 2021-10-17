@@ -17,7 +17,7 @@ $stmt = $pdo->query("SELECT supplier.name,supplier.phn,supplier_id FROM `supplie
 <body>
     
     <div class="container">
-        <h2 class="text-center pb-2 mb-2">Customer Database</h2>
+        <h2 class="text-center pb-2 mb-2">Supplier Database</h2>
         <div class="table-responsive">
           <table class="table table-dark table-hover">
             <?php

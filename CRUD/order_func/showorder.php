@@ -16,7 +16,7 @@ $stmt=$pdo->query("SELECT order_id,orders.order_date,orders.qty,orders.price,pro
 <body>
    
 <div class = "container">
-     <h2 class="text-center pb-2 mb-2">Customer Database</h2>
+     <h2 class="text-center pb-2 mb-2">Orders</h2>
         <div class="table-responsive">
 <table class="table table-dark table-hover" >
 

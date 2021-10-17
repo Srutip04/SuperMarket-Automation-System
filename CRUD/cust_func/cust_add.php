@@ -25,7 +25,7 @@ if (isset($_POST['Name']) && isset($_POST['PhnNo'])) {
     <div class="contact1">
         <div class="container-contact1">
             <div class="contact1-pic js-tilt" data-tilt>
-                <img src="images/distributor.png" alt="IMG">
+                <img src="images/cust.png" alt="IMG">
             </div>
 
             <form method="post" action="cust_add.php" class="contact1-form validate-form">
