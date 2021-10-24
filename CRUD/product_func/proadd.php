@@ -2,13 +2,15 @@
 require_once 'pdo.php';
 session_start();
 
-if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['price']) && isset($_POST['mfg_date']) && isset($_POST['comp_id'])) {
-    $stmt = $pdo->prepare("INSERT INTO `products` (product_name,qty,price,mfg_date) VALUES(:product_name,:qty,:price,:mfg_date)");
+if (isset($_POST['product_name']) && isset($_POST['qty']) && isset($_POST['cp']) && isset($_POST['sp']) && isset($_POST['mfg_date']) && isset($_POST['supplier_id'])) {
+    $stmt = $pdo->prepare("INSERT INTO `products` (product_name,qty,cp,sp,mfg_date,supplier_id) VALUES(:product_name,:qty,:cp,:sp,:mfg_date,supplier_id)");
     $stmt->execute(array(
         ':product_name' => $_POST['product_name'], 
         ':qty' => $_POST['qty'],
-        ':price' => $_POST['price'],
-        ':mfg_date' => $_POST['mfg_date']
+        ':cp' => $_POST['cp'],
+        ':sp' => $_POST['sp'],
+        ':mfg_date' => $_POST['mfg_date'],
+        ':supplier_id' => $_POST['supplier_id']
     ));
     $_SESSION['success'] = 'Record Added';
     header("Location: showpro.php");
@@ -44,23 +46,25 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
                 </div>
 
                 <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="unit" placeholder="Unit">
+                    <input class="input1" type="text" name="qty" placeholder="Quantity">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="price" placeholder="Price">
+                    <input class="input1" type="text" name="cp" placeholder="Cost Price">
+                    <span class="shadow-input1"></span>
+                </div>
+                 <div class="wrap-input1 validate-input" data-validate="Required">
+                    <input class="input1" type="text" name="sp" placeholder="Selling Price">
                     <span class="shadow-input1"></span>
                 </div>
                  <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="mfg_date" placeholder="Mfg Date">
                     <span class="shadow-input1"></span>
                 </div>
-                 
-
-
-
-
-
+                 <div class="wrap-input1 validate-input" data-validate="Required">
+                    <input class="input1" type="text" name="supplier_id" placeholder="Supplier ID">
+                    <span class="shadow-input1"></span>
+                </div>
                 <div class="container-contact1-form-btn">
                     <button class="contact1-form-btn">
                         <span>
@@ -72,6 +76,14 @@ if (isset($_POST['product_name']) && isset($_POST['unit']) && isset($_POST['pric
             </form>
             <form method="post" action="showpro.php" class="contact1-form validate-form">
                 <div class="container-contact1-form-btn">
+                     <div class="view">
+                         <a href="http://localhost/supplychain/CRUD/product_func/view.php">
+                        <span>
+                            VIEW
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                         </a>
+                      </div>
                     <button class="contact1-form-btn">
                         <span>
                             DELETE/EDIT

@@ -51,8 +51,18 @@ if (isset($_POST['Name']) && isset($_POST['PhnNo'])) {
                     </button>
                 </div>
             </form>
+            
             <form method="post" action="showcust.php" class="contact1-form validate-form">
                 <div class="container-contact1-form-btn">
+                   <div class="view">
+                         <a href="http://localhost/supplychain/CRUD/cust_func/view.php">
+                        <span>
+                            VIEW
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                         </a>
+                     </div>
+                    
                     <button class="contact1-form-btn">
                         <span>
                             DELETE/EDIT
@@ -61,7 +71,7 @@ if (isset($_POST['Name']) && isset($_POST['PhnNo'])) {
                     </button>
                 </div>
             </form>
+
         </div>
     </div>
-    <script src="main.js"></script>
 </body>

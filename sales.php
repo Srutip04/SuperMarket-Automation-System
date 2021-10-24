@@ -1,7 +1,7 @@
 <?php
 require_once "pdo.php";
 session_start();
-$stmt=$pdo->query("SELECT products.product_name,date_format(order_date,'%M') AS Sales_per_month,SUM(orders.qty) AS Quantity_sold,SUM(orders.qty * orders.price) AS SP,SUM(orders.qty * products.price) AS CP,SUM((orders.qty * orders.price) - (orders.qty * products.price)) AS Profit FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id GROUP BY products.product_name,year(order_date),month(order_date) ORDER BY year(order_date),month(order_date) LIMIT 0, 25");
+$stmt=$pdo->query("SELECT products.product_name,date_format(order_date,'%M') AS Sales_per_month,SUM(orders.qty) AS Quantity_sold,SUM(orders.qty * products.sp) AS SP,SUM(orders.qty * products.cp) AS CP,SUM((orders.qty * products.sp) - (orders.qty * products.cp)) AS Profit FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id GROUP BY products.product_name,year(order_date),month(order_date) ORDER BY year(order_date),month(order_date) LIMIT 0, 25");
 ?>
 <html>
     <head>
@@ -35,7 +35,6 @@ $stmt=$pdo->query("SELECT products.product_name,date_format(order_date,'%M') AS 
                   $arows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   foreach ($arows as $rows)
                   {   
-                
                     echo "<tr><td>";
                     echo($rows["product_name"]);
                     echo("</td><td>");
