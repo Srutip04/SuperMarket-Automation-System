@@ -10,11 +10,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-#particles-js{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+
 header{
     width: 90%;
     text-align: center;
@@ -67,16 +63,16 @@ a:hover{
 }
 
    
-#supp{
+#sales{
     border-top: 4px solid #00e923;
 }
 #admin{
     border-top:4px solid #00f038;
 }
-#customer{
+#bills{
   border-top: 4px solid #00f85b;
 }
-#mfg{
+#pro{
     border-top: 4px solid #00ff1e;
 }
 @media screen and (min-width: 800px) {
@@ -104,12 +100,12 @@ a:hover{
         gap: 30px;
     }
 
-    #supp {
+    #sales {
         grid-area: aa;
         align-self: center;
     }
 
-    #customer {
+    #bills {
         grid-area: dd;
     }
 
@@ -117,7 +113,7 @@ a:hover{
         grid-area: bb;
     }
 
-    #mfg {
+    #pro {
         grid-area: cc;
         align-self: center;
     }
