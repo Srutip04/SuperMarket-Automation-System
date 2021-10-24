@@ -5,8 +5,8 @@
 
     
         if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['qty']) && isset($_POST['cp']) && isset($_POST['sp']) && isset($_POST['mfg_date']) && isset($_POST['supplier_id'])) {
-            $stmt = $pdo->prepare("UPDATE `products` SET product_name =:product_name,qty = :qty,cp = :cp,sp=:sp,mfg_date=:mfg_date,supplier_id=:sid  WHERE product_id = :cid");
-            $stmt->execute(array(':product_name' => $_POST['product_name'],':qty' => $_POST['qty'],':cp' => $_POST['cp'],':mfg_date' => $_POST['mfg_date'],':sid' => $_POST['supplier_id'],':cid' =>$_POST['product_id']));
+            $stmt = $pdo->prepare("UPDATE `products` SET product_name =:product_name,qty = :qty,cp = :cp,sp=:sp,mfg_date=:mfg_date,supplier_id=:supplier_id  WHERE product_id = :cid");
+            $stmt->execute(array(':product_name' => $_POST['product_name'],':qty' => $_POST['qty'],':cp' => $_POST['cp'],':sp'=>$_POST['sp'],':mfg_date' => $_POST['mfg_date'],':supplier_id' => $_POST['supplier_id'],':cid' =>$_POST['product_id']));
             $_SESSION['success'] = 'Record Edited';
             header('Location: showpro.php');
             return;
@@ -51,11 +51,11 @@
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="price" value="<?= $row['cp'] ?>">
+					<input class="input1" type="text" name="cp" value="<?= $row['cp'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                  <div class="wrap-input1">
-					<input class="input1" type="text" name="price" value="<?= $row['sp'] ?>">
+					<input class="input1" type="text" name="sp" value="<?= $row['sp'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
@@ -63,7 +63,7 @@
                     <span class="shadow-input1"></span>
                 </div>
                <div class="wrap-input1">
-					<input class="input1" type="text" name="mfg_date" value="<?= $row['supplier_id'] ?>">
+					<input class="input1" type="text" name="supplier_id" value="<?= $row['supplier_id'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
 
