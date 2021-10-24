@@ -37,17 +37,13 @@ $stmt=$pdo->query("SELECT product_id,products.product_name,products.qty,products
               echo 'Supplier Name' ;
               echo "</td><td>" ;
               echo 'Location' ;
-              echo "</td><td>" ;
-              echo 'Delete' ;
-              echo "</td><td>" ;
-              echo 'Edit' ;
               echo "</td></tr>" ;
               echo "</thead>" ;
 
 
                         $arows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         foreach ($arows as $rows)
-                        {    $cid = $rows['product_id'];
+                        {   
                 
                               echo "<tr><td data-label='Product ID'>";
                               echo($rows["product_id"]);
@@ -65,10 +61,6 @@ $stmt=$pdo->query("SELECT product_id,products.product_name,products.qty,products
                               echo($rows['name']);
                               echo("</td><td data-label='Location'>");
                               echo($rows['location']);
-                              echo("</td><td>");
-                              echo('<a href="delpro.php?product_id='.$cid.'">Delete</a>');
-                              echo("</td><td>");
-                              echo('<a href="editpro.php?product_id='.$cid.'">Edit</a>');
                               echo("</td></tr>");
                         }
              ?>
