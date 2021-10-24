@@ -58,6 +58,14 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
             <form method="post" action="showsupp.php" class="contact1-form validate-form">
                 <div class="container-contact1-form-btn">
                     <button class="contact1-form-btn">
+                         <a href="http://localhost/supplychain/CRUD/supp_func/view.php">
+                        <span>
+                            VIEW
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                         </a>
+                    </button>
+                    <button class="contact1-form-btn">
                         <span>
                             DELETE/EDIT
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -67,6 +75,6 @@ if (isset($_POST['name']) && isset($_POST['phn'])) {
             </form>
         </div>
     </div>
-    <script src="main.js"></script>
+    
 </body>
 </html>
