@@ -1,7 +1,7 @@
 <?php
 require_once "pdo.php";
 session_start();
-$stmt=$pdo->query("SELECT * FROM `products`");
+$stmt=$pdo->query("SELECT product_id,products.product_name,products.qty,products.cp,products.sp,products.mfg_date,supplier.name,supplier.location FROM `products` INNER JOIN `supplier` ON products.supplier_id=supplier.supplier_id");
 ?>
 <html>
     <head>
@@ -28,9 +28,15 @@ $stmt=$pdo->query("SELECT * FROM `products`");
               echo '</td><td>';
               echo 'Quantity';
               echo '</td><td>';
-              echo 'Unit Price' ;
+              echo 'Cost Price' ;
+              echo "</td><td>" ;
+              echo 'Selling Price' ;
               echo "</td><td>" ;
               echo 'Mfg. Date';
+              echo "</td><td>" ;
+              echo 'Supplier Name' ;
+              echo "</td><td>" ;
+              echo 'Location' ;
               echo "</td></tr>" ;
               echo "</thead>" ;
 
@@ -45,10 +51,16 @@ $stmt=$pdo->query("SELECT * FROM `products`");
                               echo($rows["product_name"]);
                               echo("</td><td data-label='Quantity'>");
                               echo($rows['qty']);
-                              echo("</td><td data-label='Unit Price'>");
-                              echo($rows['price']);
+                              echo("</td><td data-label='Cost Price'>");
+                              echo($rows['cp']);
+                              echo("</td><td data-label='Selling Price'>");
+                              echo($rows['sp']);
                               echo("</td><td data-label='Mfg. Date'>");
                               echo($rows['mfg_date']);
+                              echo("</td><td data-label='Supplier Name'>");
+                              echo($rows['name']);
+                              echo("</td><td data-label='Location'>");
+                              echo($rows['location']);
                               echo("</td></tr>");
                         }
              ?>
