@@ -8,20 +8,20 @@ $t=time();
 // echo($t . "<br>");
 $d=date("Y-m-d",$t);
 
-for($i=1;$i<=3;$i++){
-//   // if(isset($_POST['product_id'. strval($i)])){
+// for($i=1;$i<=3;$i++){
+// //   // if(isset($_POST['product_id'. strval($i)])){
     
-    $pid=$_POST['productId1'];
-    $qty=$_POST['quantity1'];
-    $price=$_POST['price1'];
+//     $pid=$_POST['productId1'];
+//     $qty=$_POST['quantity1'];
+//     $price=$_POST['price1'];
     
-    {
-      $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d',2,'$qty','$price','$cid','$t')";
-      $stmt=$pdo->prepare($sql);
-      $stmt->execute();
-    }
+//     {
+//       $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d',2,'$qty','$price','$cid','$t')";
+//       $stmt=$pdo->prepare($sql);
+//       $stmt->execute();
+//     }
    
-  }
+//   }
 
       
  
