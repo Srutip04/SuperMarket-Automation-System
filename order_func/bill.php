@@ -18,7 +18,8 @@ $d=$_POST['orderDate'];
 //       $stmt->execute();
     
 //   }
-for($i=1;$i<=2;$i++){
+$cnt=$_POST['counter'];
+for($i=1;$i<=$cnt;$i++){
 //   // if(isset($_POST['product_id'. strval($i)])){
     
     $pid=$_POST['productId'. strval($i)];
