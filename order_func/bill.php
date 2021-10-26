@@ -30,11 +30,17 @@ for($i=1;$i<=$cnt;$i++){
       $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d','$pid','$qty','$price','$cid','$t')";
       $stmt=$pdo->prepare($sql);
       $stmt->execute();
+    // $_SESSION['success'] = 'Record Added';
+    // header("Location: showbill.php");
+    // return;
     }
+}
+    $stmt=$pdo->query("SELECT bill_id,order_id,products.product_name,orders.qty,products.sp,customer.Name,customer.PhnNo,orders.qty * products.sp AS Amount  FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id WHERE bill_id='$t' ");
+  
    
-  }
 
 // echo $_POST['productId1'];
+
 
 
 
@@ -50,11 +56,45 @@ for($i=1;$i<=$cnt;$i++){
     </head>
     <body>
         <div class="container">
-            <h2 class="text-center pb-2 mb-2">Orders</h2>
+            <h2 class="text-center pb-2 mb-2">Bill</h2>
             <div class="table-responsive">
-              <!-- <table class="table table-dark table-hover" >
-                  
-              </table> -->
+              <table class="table table-dark table-hover" >
+                  <?php 
+                  echo "<thead>";
+                  echo "<tr><td>" ;
+                  echo 'Product Name';
+                  echo '</td><td>';
+                  echo 'Quantity';
+                  echo '</td><td>';
+                  echo 'Unit Price' ;
+                  echo "</td><td>" ;
+                  echo 'Amount';
+                  echo "</td></tr>";
+                  echo "</thead>";
+                //   echo "<tr><th colspan=3>";
+                //   echo "Total";
+                //   echo "</th>";
+                       $arows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                       foreach($arows as $rows){
+                        //    $t=$rows['bill_id'];
+                    echo "<tr><td>";
+                    echo($rows['product_name']);
+                    echo("</td><td>");
+                    echo($rows['qty']);
+                    echo("</td><td>");
+                    echo($rows['sp']);
+                    echo("</td><td>");
+                    echo($rows['Amount']);
+                    // echo("</td><td>");
+                //      echo "<tr><th colspan=3>";
+                //   echo "Total";
+                //   echo "</th>";
+                //     echo($rows['total']);
+                    echo "</td></tr>";
+                   
+                       }
+                  ?>
+              </table>
             </div>
         </div>
     </body>
