@@ -1,0 +1,34 @@
+body{
+    padding: 20px;
+}
+table{
+    text-align: center;
+}
+ @media (max-width: 575px) {
+
+     table thead {
+         display: none;
+     }
+
+     table tr {
+         display: flex;
+         flex-direction: column;
+         border: 3px solid white;
+         padding: 1px;
+     }
+
+
+     table td[data-label] {
+         display: flex;
+         font-weight: bold;
+     }
+
+     table td[data-label]::before {
+         content: attr(data-label);
+         color: lightgrey;
+         font-weight: 100;
+         width: 50%;
+     }
+
+
+ }
