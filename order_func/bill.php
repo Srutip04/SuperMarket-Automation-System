@@ -41,7 +41,7 @@ for($i=1;$i<=$cnt;$i++){
 
 // echo $_POST['productId1'];
 
-
+ $total=0;
 
 
 ?>
@@ -77,6 +77,7 @@ for($i=1;$i<=$cnt;$i++){
                        $arows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                        foreach($arows as $rows){
                         //    $t=$rows['bill_id'];
+                        
                     echo "<tr><td>";
                     echo($rows['product_name']);
                     echo("</td><td>");
@@ -91,10 +92,17 @@ for($i=1;$i<=$cnt;$i++){
                 //   echo "</th>";
                 //     echo($rows['total']);
                     echo "</td></tr>";
+                    // $total=0;
+                    $amt=$rows['qty'] * $rows['sp'];
+                    $total+=$amt;
                    
                        }
+                    //   echo($total);
                   ?>
               </table>
+              <div class="total" style="float:right">
+                     <h2>Total <span><?php echo $total?></span></h2>
+             </div>
             </div>
         </div>
     </body>
