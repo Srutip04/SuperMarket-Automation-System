@@ -18,22 +18,22 @@ $d=$_POST['orderDate'];
 //       $stmt->execute();
     
 //   }
-for($i=1;$i<=3;$i++){
+for($i=1;$i<=2;$i++){
 //   // if(isset($_POST['product_id'. strval($i)])){
     
-    $pid=$_POST['productId1'];
-    $qty=$_POST['quantity1'];
-    $price=$_POST['price1'];
+    $pid=$_POST['productId'. strval($i)];
+    $qty=$_POST['quantity' . strval($i)];
+    $price=$_POST['price' . strval($i)];
     
     {
-      $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d',2,'$qty','$price','$cid','$t')";
+      $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d','$pid','$qty','$price','$cid','$t')";
       $stmt=$pdo->prepare($sql);
       $stmt->execute();
     }
    
   }
 
-echo $_POST['productId1'];
+// echo $_POST['productId1'];
 
 
 
