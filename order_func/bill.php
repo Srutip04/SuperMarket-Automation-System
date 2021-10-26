@@ -1,12 +1,8 @@
 <?php
 require_once "pdo.php";
 session_start();
-// $oid=$_POST['order_id'];
-// $stmt=$pdo->query("SELECT order_id,orders.qty,products.sp,products.product_name,customer.Name,customer.PhnNo,orders.qty * products.sp AS Amount FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id WHERE order_id =$oid");
-// if(isset($_POST['submit'])){
-    $cid=$_POST['customerID'];
+$cid=$_POST['customerID'];
 $t=$_POST['timeStamp'];
-// echo($t . "<br>");
 $d=$_POST['orderDate'];
 //   for($i=1;$i<=3;$i++){
 //     $pid=$_POST['productId'. strval($i)];
@@ -30,16 +26,12 @@ for($i=1;$i<=$cnt;$i++){
       $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d','$pid','$qty','$price','$cid','$t')";
       $stmt=$pdo->prepare($sql);
       $stmt->execute();
-    // $_SESSION['success'] = 'Record Added';
-    // header("Location: showbill.php");
-    // return;
+    
     }
 }
     $stmt=$pdo->query("SELECT bill_id,order_id,products.product_name,orders.qty,products.sp,customer.Name,customer.PhnNo,orders.qty * products.sp AS Amount  FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id WHERE bill_id='$t' ");
   
-   
 
-// echo $_POST['productId1'];
 
  $total=0;
 
@@ -56,7 +48,13 @@ for($i=1;$i<=$cnt;$i++){
     </head>
     <body>
         <div class="container">
-            <h2 class="text-center pb-2 mb-2">Bill</h2>
+            <h1 class="text-center pb-2 mb-2">Bill</h1>
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                 <h4>Bill ID: <span><?php echo($t)?></span></h4><br>
+                 <h4>Date: <span><?php echo($d)?></span></h4><br>
+               </div>
+           </div>
             <div class="table-responsive">
               <table class="table table-dark table-hover" >
                   <?php 
@@ -71,13 +69,10 @@ for($i=1;$i<=$cnt;$i++){
                   echo 'Amount';
                   echo "</td></tr>";
                   echo "</thead>";
-                //   echo "<tr><th colspan=3>";
-                //   echo "Total";
-                //   echo "</th>";
+                
                        $arows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                        foreach($arows as $rows){
-                        //    $t=$rows['bill_id'];
-                        
+                      
                     echo "<tr><td>";
                     echo($rows['product_name']);
                     echo("</td><td>");
@@ -86,22 +81,19 @@ for($i=1;$i<=$cnt;$i++){
                     echo($rows['sp']);
                     echo("</td><td>");
                     echo($rows['Amount']);
-                    // echo("</td><td>");
-                //      echo "<tr><th colspan=3>";
-                //   echo "Total";
-                //   echo "</th>";
-                //     echo($rows['total']);
                     echo "</td></tr>";
-                    // $total=0;
+                   
                     $amt=$rows['qty'] * $rows['sp'];
                     $total+=$amt;
                    
                        }
-                    //   echo($total);
+                   
                   ?>
               </table>
-              <div class="total" style="float:right">
-                     <h2>Total <span><?php echo $total?></span></h2>
+              <div class="card text-white bg-dark mb-3" style="float:right">
+                   <div class="card-body">
+                     <h2>Total: <span><?php echo $total?></span></h2>
+                     </div>
              </div>
             </div>
         </div>
