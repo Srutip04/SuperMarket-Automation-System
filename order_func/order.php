@@ -3,7 +3,7 @@ require_once 'pdo.php';
 session_start();
 // echo $_POST['customer_id'];
 // console.log($_POST['customer_id']);
-$cid=$_POST['customer_id'];
+$cid=$_POST['customerID'];
 $t=time();
 // echo($t . "<br>");
 $d=date("Y-m-d",$t);

@@ -18,6 +18,7 @@ $d=$_POST['orderDate'];
 //       $stmt->execute();
     
 //   }
+
 echo $_POST['productId1'];
 
 }

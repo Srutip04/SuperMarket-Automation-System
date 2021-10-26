@@ -2,7 +2,7 @@
 require_once 'pdo.php';
 session_start();
 
-if (isset($_POST['customer_id'])) {
+if (isset($_POST['customerID'])) {
     // $stmt = $pdo->prepare("INSERT INTO `orders` (bill_id,order_id,customer_id) VALUES(:bill_id,:order_id,:customer_id)");
     // $stmt->execute(array(
     //     ':bill_id' => $_POST['bill_id'],
@@ -66,7 +66,7 @@ if (isset($_POST['customer_id'])) {
                 </div>
                 -->
                 <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="customer_id" placeholder="Customer ID">
+                    <input class="input1" type="text" name="customerID" placeholder="Customer ID">
                     <span class="shadow-input1"></span>
                     
                         
