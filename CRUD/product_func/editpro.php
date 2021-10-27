@@ -43,27 +43,33 @@
                 <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
                 
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="product_name" value="<?= $row['product_name'] ?>">
+                     <label for="name">PRODUCT NAME</label>
+					<input class="input1" type="text" name="product_name" id="name" value="<?= $row['product_name'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="qty" value="<?= $row['qty'] ?>">
+                    <label for="qty"><span>QUANTITY</span></label>
+					<input class="input1" type="text" name="qty" id="qty" value="<?= $row['qty'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="cp" value="<?= $row['cp'] ?>">
+                     <label for="cp">COST PRICE</label>
+					<input class="input1" type="text" name="cp" id="cp" value="<?= $row['cp'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                  <div class="wrap-input1">
-					<input class="input1" type="text" name="sp" value="<?= $row['sp'] ?>">
+                      <label for="sp">SELLING PRICE</label>
+					<input class="input1" type="text" name="sp" id="sp" value="<?= $row['sp'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-					<input class="input1" type="text" name="mfg_date" value="<?= $row['mfg_date'] ?>">
+                     <label for="date">Mfg_Date</label>
+					<input class="input1" type="text" name="mfg_date" id="date" value="<?= $row['mfg_date'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                <div class="wrap-input1">
-					<input class="input1" type="text" name="supplier_id" value="<?= $row['supplier_id'] ?>">
+                    <label for="sup">SUPPLIER ID</label>
+					<input class="input1" type="text" name="supplier_id" id="sup" value="<?= $row['supplier_id'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
 
