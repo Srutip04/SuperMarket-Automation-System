@@ -41,11 +41,13 @@ if ($row === false) {
                 <input type="hidden" name="supplier_id" value="<?= $row['supplier_id'] ?>">
 
                 <div class="wrap-input1">
-                    <input class="input1" type="text" name="name" value="<?= $row['name'] ?>">
+                    <label for="name"><span>NAME</span></label>
+                    <input class="input1" type="text" name="name" id="name" value="<?= $row['name'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="wrap-input1">
-                    <input class="input1" type="text" name="phn" value="<?= $row['phn'] ?>">
+                    <label for="phn"><span>PHONE NUMBER</span></label>
+                    <input class="input1" type="text" id="phn" name="phn" value="<?= $row['phn'] ?>">
                     <span class="shadow-input1"></span>
                 </div>
                 <div class="container-contact1-form-btn">
