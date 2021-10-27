@@ -17,16 +17,23 @@ $d=$_POST['orderDate'];
 $cnt=$_POST['counter'];
 for($i=1;$i<=$cnt;$i++){
 //   // if(isset($_POST['product_id'. strval($i)])){
-    
     $pid=$_POST['productId'. strval($i)];
     $qty=$_POST['quantity' . strval($i)];
     $price=$_POST['price' . strval($i)];
-    
-    {
+    $qtydec=0;
+
+    $stmt1=$pdo->query("SELECT qty from products WHERE product_id='$pid'");
+    $arows = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+    foreach($arows as $rows){
+        $qtydec = $rows['qty'] - $qty;
+    }
+    if($qtydec >= 0)
+    { 
       $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d','$pid','$qty','$price','$cid','$t')";
       $stmt=$pdo->prepare($sql);
       $stmt->execute();
-    
+      $stmt2 = $pdo->prepare("UPDATE `products` SET qty = '$qtydec' WHERE product_id = '$pid'");
+      $stmt2->execute();
     }
 }
     $stmt=$pdo->query("SELECT bill_id,order_id,products.product_name,orders.qty,products.sp,customer.Name,customer.PhnNo,orders.qty * products.sp AS Amount  FROM `orders` INNER JOIN `products` ON orders.product_id=products.product_id INNER JOIN `customer` ON orders.customer_id=customer.customer_id WHERE bill_id='$t' ");
