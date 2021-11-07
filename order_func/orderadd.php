@@ -37,34 +37,7 @@ if (isset($_POST['customerID'])) {
                 <span class="contact1-form-title">
                    ORDERS
                 </span>
-                 <!-- <div class="wrap-input1 validate-input" data-validate="Name is required">
-                    <input class="input1" type="text" name="bill_id" placeholder="Bill ID">
-                    <span class="shadow-input1"></span>
-                </div>
-                <div class="wrap-input1 validate-input" data-validate="Name is required">
-                    <input class="input1" type="text" name="order_id" placeholder="Order ID">
-                    <span class="shadow-input1"></span>
-                </div> -->
-
-                <!-- <div class="wrap-input1 validate-input" data-validate="Name is required">
-                    <input class="input1" type="text" name="order_date" placeholder="Order Date">
-                    <span class="shadow-input1"></span>
-                </div> -->
-                <!--
-                <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="qty" placeholder="Quantity">
-                    <span class="shadow-input1"></span>
-                </div>
-                <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="price" placeholder="Price">
-                    <span class="shadow-input1"></span>
-                </div>
-
-                <div class="wrap-input1 validate-input" data-validate="Required">
-                    <input class="input1" type="text" name="product_id" placeholder="Product ID">
-                    <span class="shadow-input1"></span>
-                </div>
-                -->
+                
                 <div class="wrap-input1 validate-input" data-validate="Required">
                     <input class="input1" type="text" name="customerID" placeholder="Customer ID">
                     <span class="shadow-input1"></span>
@@ -72,13 +45,6 @@ if (isset($_POST['customerID'])) {
                         
                 </div>
                 <div class="container-contact1-form-btn">
-                    
-                        <!-- <a href="http://localhost/supplychain/cust_func/cust_add.php">
-                        <span>
-                            ADD CUSTOMER
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </span>
-                        </a> -->
                     
                     <button class="contact1-form-btn">       
                         <span>
@@ -88,18 +54,7 @@ if (isset($_POST['customerID'])) {
                     </button>    
                 </div>
             </form>
-            <!--
-            <form method="post" action="showorder.php" class="contact1-form validate-form">
-                <div class="container-contact1-form-btn">
-                    <button class="contact1-form-btn">
-                        <span>
-                            DELETE/EDIT
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-            </form>
-           -->
+           
         </div>
     </div>
     <script src="main.js"></script>

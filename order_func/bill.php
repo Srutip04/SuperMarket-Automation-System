@@ -4,19 +4,10 @@ session_start();
 $cid=$_POST['customerID'];
 $t=$_POST['timeStamp'];
 $d=$_POST['orderDate'];
-//   for($i=1;$i<=3;$i++){
-//     $pid=$_POST['productId'. strval($i)];
-//     $qty=$_POST['quantity'. strval($i)];
-//     $price=$_POST['price'. strval($i)];
-//     // if($pid!=='' && $qty!=='' && $price!==''){
-//       $sql="INSERT INTO `orders` (order_date,product_id,qty,price,customer_id,bill_id) VALUES('$d',2,'$qty','$price','$cid','$t')";
-//       $stmt=$pdo->prepare($sql);
-//       $stmt->execute();
-    
-//   }
+
 $cnt=$_POST['counter'];
 for($i=1;$i<=$cnt;$i++){
-//   // if(isset($_POST['product_id'. strval($i)])){
+
     $pid=$_POST['productId'. strval($i)];
     $qty=$_POST['quantity' . strval($i)];
     $price=$_POST['price' . strval($i)];
